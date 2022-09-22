@@ -5,6 +5,7 @@ metadata:
   name: litmus-load-sample
 spec:
   parallelism: 4
+  arguments: --vus 10 --duration 30s
   script:
     configMap:
       name: "litmus-load-test"
