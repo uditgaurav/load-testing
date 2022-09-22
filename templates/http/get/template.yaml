@@ -1,0 +1,11 @@
+---
+apiVersion: k6.io/v1alpha1
+kind: LitmusLoad
+metadata:
+  name: litmus-load-sample
+spec:
+  parallelism: 4
+  script:
+    configMap:
+      name: "litmus-load-test"
+      file: "script.js"
