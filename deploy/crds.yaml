@@ -6,20 +6,20 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.3.0
   creationTimestamp: null
-  name: k6s.k6.io
+  name: litmusload.litmuschaos.io
 spec:
-  group: k6.io
+  group: litmuschaos.io
   names:
-    kind: K6
-    listKind: K6List
-    plural: k6s
-    singular: k6
+    kind: LitmusLoad
+    listKind: LitmusLoadList
+    plural: litmusloads
+    singular: litmusload
   scope: Namespaced
   versions:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: K6 is the Schema for the k6s API
+        description: LitmusLoad is the Schema for the LitmusLoads API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -34,7 +34,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: K6Spec defines the desired state of K6
+            description: LitmusLoadSpec defines the desired state of LitmusLoad
             properties:
               arguments:
                 type: string
@@ -1063,11 +1063,11 @@ spec:
                     type: array
                 type: object
               script:
-                description: K6Script describes where the script to execute the tests
+                description: LitmusLoadScript describes where the script to execute the tests
                   is found
                 properties:
                   configMap:
-                    description: K6Configmap describes the config map script location
+                    description: LitmusLoadConfigmap describes the config map script location
                     properties:
                       file:
                         type: string
@@ -1079,7 +1079,7 @@ spec:
                   localFile:
                     type: string
                   volumeClaim:
-                    description: K6VolumeClaim describes the volume claim script location
+                    description: LitmusLoadVolumeClaim describes the volume claim script location
                     properties:
                       file:
                         type: string
@@ -2096,7 +2096,7 @@ spec:
             - script
             type: object
           status:
-            description: K6Status defines the observed state of K6
+            description: LitmusLoadStatus defines the observed state of LitmusLoad
             properties:
               stage:
                 description: Stage describes which stage of the test execution lifecycle
